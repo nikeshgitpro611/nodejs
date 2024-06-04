@@ -39,5 +39,15 @@ Here flag is define to start and just like push our content..
 - we are creating server 
 - handling req, res of url
 - HTTP/http.js
+- created server listen port
 
+# npm 
+- it's called re-useable pakages that containts of js code.
+- Another name called modules and dependancy
+- npm is global command comes with nodejs
+- local dependancy - use in particular project [NPM i]
+- global dependancy - use it any project [npm i -g]
+
+# Deploymet Platform
+- digitalocean, horrocu
 
