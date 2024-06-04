@@ -36,6 +36,8 @@ Here flag is define to start and just like push our content..
 
 # Http Modle
 
-- 
+- we are creating server 
+- handling req, res of url
+- HTTP/http.js
 
 
