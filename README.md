@@ -51,3 +51,24 @@ Here flag is define to start and just like push our content..
 # Deploymet Platform
 - digitalocean, horrocu
 
+# Event loop 
+ - it to handle asynchronous operations
+ - It is the mechanism that allows Node.js to perform non-blocking I/O operations 
+ - Node.js uses the event loop to handle asynchronous operations without blocking the main thread.
+  > Event Loop is working in phase wise
+  - TIME PHASE - Executes callbacks scheduled by setTimeout and setInterval.
+  - PENDING CALLBACK PHASE - Executes I/O callbacks deferred to the next loop iteration.
+  - Idle, Prepare Phase: Used internally by Node.js for internal operations.
+  - Poll Phase: Retrieves new I/O events; executes I/O-related callbacks (excluding close callbacks, timers, and setImmediate).
+  - Check Phase: 
+  - Close Callbacks Phase:Executes close event callbacks (e.g., socket.on('close', ...)).
+
+  > Task Queue and Microtask Queue:
+  - Task Queue (Macro-tasks): Includes callbacks from setTimeout, setInterval, setImmediate, I/O, and others.
+  - Microtask Queue: Includes promises and process.nextTick.
+
+  > Order of Execution:
+  - Microtasks are executed after each phase of the event loop.
+
+Reff - https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
+

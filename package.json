@@ -4,7 +4,8 @@
   "description": "<!-- #Importants -->\r global - no window\r __dirname = path of current directory\r __filename = file name\r require =  function to use module(commonjs)\r module = information about current module(file)\r process  = info about env wher the program being execute",
   "main": "osModles.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev" : "nodemon index.js"
   },
   "keywords": [],
   "author": "",
