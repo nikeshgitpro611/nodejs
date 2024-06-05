@@ -109,6 +109,10 @@ Reff - https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nextt
  >  app.get
    - In express method is res.send('msg)
    - it will take two argument app.get(path, callback Fn)
+   - app.get('/', (req, res) => {
+      res.sendFile(path.join(__dirname, "./navBar/index.html"))
+      })
+  - sendFile is use for redirect path
 
  - app.put
  - app.push
@@ -118,11 +122,17 @@ Reff - https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nextt
 
  - app.all('/user', (req, res, next) => {
   console.log('A request was made to /user');
-  next(); // Pass control to the next handler
-  <!-- - [![alt text](image.png)] -->
+  next(); // Pass control to the next handler.
+
   - ![alt text](image-1.png)
+  - Status and Send 
+  ![alt text](image-2.png)
 });
 > app.use 
  - It,s responsible for Middleware
 > app.listen
  - Responsible for port configure
+
+ > API VS SSR
+
+ ![alt text](image-3.png)
