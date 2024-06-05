@@ -1,4 +1,8 @@
+REPO - https://github.com/john-smilga/node-express-course
+
 <!-- #Importants -->
+
+
 global - no window
 __dirname = path of current directory
 __filename = file name
@@ -36,10 +40,23 @@ Here flag is define to start and just like push our content..
 
 # Http Modle
 
+These are helpfull for request server and server will respond then user can get data
 - we are creating server 
 - handling req, res of url
 - HTTP/http.js
 - created server listen port
+
+> HTTP METHODS
+
+- GET - Read data
+- Post - Inser Data
+- Put - Update Data
+- Delete - Delete Data
+
+GET - Get all orders
+POST - Insert and Placed on Orders
+PUT - Update on behalf of specific id
+
 
 # npm 
 - it's called re-useable pakages that containts of js code.
@@ -72,3 +89,39 @@ Here flag is define to start and just like push our content..
 
 Reff - https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
 
+# EXPRESSJS
+
+- it's kind of famework of nodejs
+> Performance
+
+-  Express provides a thin layer of fundamental web application features, without obscuring Node.js features that you know and love.
+
+> Middleware
+- Express is a lightweight and flexible routing framework with minimal core features meant to be augmented through the use of Express middleware modules.
+
+> Web Applications
+- Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+> APIs
+- With a myriad of HTTP utility methods and middleware at your disposal, creating a robust API is quick and easy.
+
+> Methods
+ >  app.get
+   - In express method is res.send('msg)
+   - it will take two argument app.get(path, callback Fn)
+
+ - app.put
+ - app.push
+ - app.delet
+> app.all
+ - You can use app.all to apply middleware that needs to run for every request to a specific path, such as authentication, logging, or setting response headers.
+
+ - app.all('/user', (req, res, next) => {
+  console.log('A request was made to /user');
+  next(); // Pass control to the next handler
+  - [![alt text](image.png)]
+});
+> app.use 
+ - It,s responsible for Middleware
+> app.listen
+ - Responsible for port configure
