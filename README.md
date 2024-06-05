@@ -119,7 +119,8 @@ Reff - https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nextt
  - app.all('/user', (req, res, next) => {
   console.log('A request was made to /user');
   next(); // Pass control to the next handler
-  - [![alt text](image.png)]
+  <!-- - [![alt text](image.png)] -->
+  - ![alt text](image-1.png)
 });
 > app.use 
  - It,s responsible for Middleware
