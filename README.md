@@ -116,7 +116,14 @@ Reff - https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nextt
       reff - showNav.js
   - sendFile is use for redirect path
   - HOW TO show data.js file in json format reff -  dataJsonUi.js
+  - json Data Show on ui after button click with a tag link 
+  reff - conditionaldatShowUIJson.js
+  - ROUTING PARAMS AND USING product id on url and show data
+  reff - parmsRouting.js
 
+  > Query String Perameters and URL Peramtrs
+    - we have url - http://localhost:5000/api/query?name=JohnDoe&age=25&city=NewYork
+    - 
  - app.put
  - app.push
  - app.delet
@@ -139,3 +146,27 @@ Reff - https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nextt
  > API VS SSR
 
  ![alt text](image-3.png)
+
+ # Middleware
+ - it's a function that request to the servr 
+ - express is based on bunch of middleware
+ - when you work with middleware must be pass next() if not then browser will be not loded
+ - all kind of logic we can setup in middleware
+ - two case here either u pass next() else trminate funtion like as res.send('msg')
+ - app.use('path will apply on all router', exprted function)
+ ref - middleWareBasic.js
+ - // for multiple middlewareval.js and middlewareBasic.js
+    app.use([getHome, authrise])
+
+ Q// How we pass two middleware in single route
+ Ans - app.get('/about',[getHome, authrise], (req, res) =>{
+    console.log('User : ', req.user);
+    res.send('About')
+})
+
+Q// can we creat own middleware/ Express/ third-party
+
+ - Yes We can creat Own Middleware app.use(//logic)
+ - Express Also app.use(express.static('path'))
+ - Third Party morgan npm reff - https://expressjs.com/en/resources/middleware/morgan.html
+ 
