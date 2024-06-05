@@ -112,7 +112,10 @@ Reff - https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nextt
    - app.get('/', (req, res) => {
       res.sendFile(path.join(__dirname, "./navBar/index.html"))
       })
+
+      reff - showNav.js
   - sendFile is use for redirect path
+  - HOW TO show data.js file in json format reff -  dataJsonUi.js
 
  - app.put
  - app.push
