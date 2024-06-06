@@ -199,7 +199,20 @@ Q// can we creat own middleware/ Express/ third-party
  - we are using kind of clear code of app.js
  - importing like as
  - app.use('/api/people', peopleRoute) [app.js] base rout and route import path
+ - ![alt text](image-5.png)
 
 # controller
  - for cleanig router using controler
+
+ --------------------------------------------------------------------------------------------
+ # TASK MENAGER API SESSION
+
+ > Install dependancy
+  -  "dependencies": {
+    "dotenv": "^16.4.5", 
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+    }
+
+  - devdependancy nodemon
  
