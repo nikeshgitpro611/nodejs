@@ -170,3 +170,36 @@ Q// can we creat own middleware/ Express/ third-party
  - Express Also app.use(express.static('path'))
  - Third Party morgan npm reff - https://expressjs.com/en/resources/middleware/morgan.html
  
+ Q// creat form and use post method
+ - such cases i will use app.use(express.urlencoded({extended: false})) for get request data from body parser then we can able to show req.body data
+ - ref - 
+
+ # Install Postman
+ - use for test API 
+
+  1. use postman display some get data
+   - reff data use (data.js/product)
+   - Ans - Express / Postman/get.js
+
+  2. in post cenerion need to be use
+    - const bodyParser = require('body-parser');
+    - // Middleware to parse JSON bodies  app.use(bodyParser.json());
+    - Ans - Express / Postman/post.js
+  
+  3. Put req
+   - for put required parms (for url id)
+   - req body for update responce
+   - Ans Reff -  Ans - Express / Postman/post.js
+
+# route
+ - inside Express folder
+ - base url need to be common
+ - ![alt text](image-4.png)
+ - need to be use route.use(bodyParser.json()) middle ware
+ - we are using kind of clear code of app.js
+ - importing like as
+ - app.use('/api/people', peopleRoute) [app.js] base rout and route import path
+
+# controller
+ - for cleanig router using controler
+ 
