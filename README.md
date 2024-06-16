@@ -215,4 +215,39 @@ Q// can we creat own middleware/ Express/ third-party
     }
 
   - devdependancy nodemon
- 
+
+> MONGODB
+ -  NOSQL NON-relation DB
+ - Store Db in json
+ - Easy to get started
+ - Free cloud hosting - ATLAS
+
+1. https://cloud.mongodb.com/v2/65894a504b1f084cbe22aa55#/security/database/users
+> Database Access
+- step -1 : Database Acess > Add New Database User > Password > 
+  Built-in Role {selecte - Read and write} > Add User
+
+> Network Access
+ - Ip AcessList > Add Ip Adress >  confirm > 
+
+> Cluster
+- Databas > cluster > connect[click]
+- Connecting with MongoDB Driver >  nodejs > latest version >
+mongodb+srv://<username>:<password>@mern-project.d94v79r.mongodb.net/?retryWrites=true&w=majority&appName=mern-project
+- collection > Add my own data > Create Database > db name > collection name > ok 
+
+> # What's MVC pattern
+- In Node.js, the Model-View-Controller (MVC) pattern is a design pattern used to structure applications in a way that separates concerns, making the codebase more organized, maintainable, and scalable
+# Modal
+- The model represents the data and the business logic of the application
+- it typically interacts with the database .
+- models are often implemented using modules or classes that define data schemas, perform CRUD operations (Create, Read, Update, Delete), and encapsulate business logic.
+![alt text](img/image-6.png)
+
+# View
+- The view is responsible for presenting data to the user and receiving user input.
+- Node.js application, views are usually implemented using template engines like EJS, Pug
+
+# Controller
+-  The controller acts as an intermediary between the model and the view
+-  Controllers in Node.js are typically implemented as modules or classes that handle HTTP requests, route them to the appropriate handlers.
