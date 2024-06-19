@@ -1,0 +1,15 @@
+{
+  "name": "advancenode",
+  "version": "1.0.0",
+  "description": "repo - https://github.com/StephenGrider/AdvancedNodeComplete",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

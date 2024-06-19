@@ -1,4 +1,5 @@
 REPO - https://github.com/john-smilga/node-express-course
+https://github.com/StephenGrider/AdvancedNodeComplete
 
 <!-- #Importants -->
 
@@ -251,3 +252,7 @@ mongodb+srv://<username>:<password>@mern-project.d94v79r.mongodb.net/?retryWrite
 # Controller
 -  The controller acts as an intermediary between the model and the view
 -  Controllers in Node.js are typically implemented as modules or classes that handle HTTP requests, route them to the appropriate handlers.
+
+> # MONGOOSE
+- doc for crud operation - https://mongoosejs.com/docs/queries.html
+- 
