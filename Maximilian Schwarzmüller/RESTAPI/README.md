@@ -111,4 +111,67 @@ const PostController = require('../controllers/PostController');
 router.get('/posts', PostController.getAllPosts);
 module.exports = router;
 ```
+# uuid npm 
+
+- npm install uuid
+``const { v4: uuidv4, v1: uuidv1 } = require('uuid');
+
+// Generate a UUIDv4 (randomly generated)
+const id1 = uuidv4();
+console.log("UUIDv4:", id1);
+
+// Generate a UUIDv1 (timestamp-based)
+const id2 = uuidv1();
+console.log("UUIDv1:", id2);
+```
+
+```
+const express = require("express");
+const { v4: uuidv4 } = require("uuid");
+const app = express();
+
+app.use(express.json());
+
+let dataStore = [];
+
+app.post("/create", (req, res) => {
+  const { name, email } = req.body;
+  const newEntry = {
+    id: uuidv4(),  // Generate a unique ID
+    name,
+    email,
+  };
+
+  dataStore.push(newEntry);
+  res.status(201).json({
+    status: true,
+    message: "Entry created successfully",
+    data: newEntry,
+  });
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+# **PUT, PATCH, and POST HTTP**
+The PUT, PATCH, and POST HTTP methods are used for different purposes when interacting with a server in RESTful APIs. Each of these methods serves a distinct role, and understanding their differences is crucial for designing and implementing APIs.
+
+**Summary of Differences:**
+
+**POST:** Creates a new resource. Each request results in a new resource being created.
+
+**PUT:** Creates or replaces a resource at a specific URL. Idempotent, meaning multiple identical requests have the same effect as one.
+
+**PATCH:** Partially updates an existing resource. Typically not idempotent, but designed to modify only specific fields.
+
+> Choosing the Right Method:
+
+- Use POST when you want to add a new resource to the server.
+- Use PUT when you want to completely update or create a resource at a specific location.
+- Use PATCH when you want to make partial updates to an existing resource.
+
+
+
+
 
