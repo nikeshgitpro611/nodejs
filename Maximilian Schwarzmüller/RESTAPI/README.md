@@ -50,12 +50,14 @@ Route
 # Model-View-Controller (MVC) 
 - the MVC pattern provides a structured way to build scalable and maintainable web applications. Here's how the MVC architecture is typically used in Node.js.
 > 1. Modal
+
 **Purpose**: Represents the data and business logic of the application. It interacts with the database, handles data validation, and implements the rules and logic that define how data is manipulated.
 
 **Example in Node.js**: Using an ORM like Mongoose (for MongoDB) or Sequelize (for SQL databases) to define models and interact with the database.
 
 **Use Case**: If you are building a blog, the model would represent posts, comments, users, etc., and handle operations like saving a new post, retrieving a list of posts, or deleting a comment.
 > 2. View
+
 **Purpose**: Represents the user interface of the application. It is responsible for presenting data to the user and handling user input.
 
 **Example in Node.js**: Views can be rendered using templating engines like EJS, Pug, or Handlebars, which allow you to generate HTML dynamically based on data from the model.
