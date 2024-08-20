@@ -21,3 +21,28 @@ app.listen("3002", () => {
   console.log("Server Connected on 3001");
 });
 ```
+# Error Handling MiddleWare
+
+
+```
+app.use((error, req, res,next)=>{
+  if (res.headerSent) {
+    return next(error)
+  }
+  res.status(error.code || 500);
+  res.json({message: error.message || 'An Unknown Error Occured...!'});
+})
+
+Route
+//Here Error Hnadling 
+  if (!ageData) {
+    const error = new Error('Some Thing Went Wrong data not Found of user age...');
+    error.code = 404;
+    return next(error) ;
+    // return res.status(404).json({
+    //   status: false,
+    //   message: "Some Thing Went Wrong data not Found...",
+    // });
+  }
+
+```
