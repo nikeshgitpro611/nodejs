@@ -1,5 +1,6 @@
 const express = require("express");
 const route = express.Router();
+const HttpError = require("../modle/httpModal");
 
 const dummyData = [
   {
@@ -158,9 +159,10 @@ route.get("/:id", (req, res, next) => {
   const { id } = req.body;
   const getDummyData = dummyData.find((getAll) => getAll.id === id);
   if (!getDummyData) {
-    const error = new Error('Some Thing Went Wrong data not Found of id...');
-    error.code = 404;
-    throw error;
+    // const error = new Error('Some Thing Went Wrong data not Found of id...');
+    // error.code = 404;
+    // throw error;
+    throw new HttpError("Some Thing Went Wrong data not Found of id...", 404);
   }
   return res.json({
     status: true,
@@ -173,12 +175,14 @@ route.get("/user/:age", (req, res, next) => {
   const { age } = req.body;
   const ageData = dummyData.find((getAge) => getAge.age === age);
 
-
-  //Here Error Hnadling 
+  //Here Error Hnadling
   if (!ageData) {
-    const error = new Error('Some Thing Went Wrong data not Found of user age...');
-    error.code = 404;
-    return next(error) ;
+    // const error = new Error('Some Thing Went Wrong data not Found of user age...');
+    // error.code = 404;
+    return next(
+      new HttpError("Some Thing Went Wrong data not Found of user age...", 404)
+    );
+
     // return res.status(404).json({
     //   status: false,
     //   message: "Some Thing Went Wrong data not Found...",
@@ -190,8 +194,6 @@ route.get("/user/:age", (req, res, next) => {
     message: "getingin data based on age",
     data: ageData,
   });
-
-
 });
 
 module.exports = route;
