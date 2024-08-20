@@ -58,8 +58,11 @@ Route
 **Example in Node.js**: Views can be rendered using templating engines like EJS, Pug, or Handlebars, which allow you to generate HTML dynamically based on data from the model.
 Use Case: In a blog application, the view would be responsible for displaying the list of blog posts, showing a single post, or rendering a form for creating or editing a post.
 3. Controller
+
 **Purpose**: Acts as an intermediary between models and views. It handles incoming requests, processes the data through the model, and then returns the appropriate view.
+
 **Example in Node.js**: Controllers are typically implemented as functions that are invoked when specific routes are hit. For instance, Express.js might be used to define a controller that handles HTTP requests.
+
 **Use Case**: In a blog application, the controller would manage the logic for routes like /posts, /posts/:id, or /posts/new, handling CRUD operations for posts.
 > Use Cases of MVC in Node.js
 **Separation of Concerns**: MVC divides an application into three interconnected components, allowing developers to work on the model, view, or controller independently. This improves code organization and maintainability.
