@@ -55,7 +55,9 @@ Single Endpoint: Unlike REST, GraphQL uses a single endpoint, and the client def
     }
 }
 ```
-# **operation types**
+# What is resolver (operation type is called resolver)
+
+- resolver contaon server side logic.
 
 **Query**: For retrieving data.
 
