@@ -55,3 +55,54 @@ Single Endpoint: Unlike REST, GraphQL uses a single endpoint, and the client def
     }
 }
 ```
+# **operation types**
+
+**Query**: For retrieving data.
+
+**Mutation**: For modifying data.
+
+**Subscription**: For real-time updates.
+>  Query
+**Purpose**: Fetch data from the server.
+
+**Usage**: Used when you want to retrieve data without making any changes to the server state.
+```
+query {
+  user(id: 1) {
+    id
+    name
+    email
+  }
+}
+```
+> Mutation
+**Purpose**: Modify data on the server (create, update, delete).
+
+**Usage**: Used when you need to change the server's state, such as creating a new user, updating an existing record, or deleting an item.
+
+```
+mutation {
+  createUser(input: {name: "John Doe", email: "john.doe@example.com"}) {
+    id
+    name
+    email
+  }
+}
+```
+> Subscription
+**Purpose**: Receive real-time updates from the server.
+
+**Usage**: Used when you need to subscribe to data changes and receive updates whenever a certain event occurs on the server.
+
+```
+subscription {
+  messageAdded {
+    id
+    content
+    author {
+      name
+    }
+  }
+}
+```
+**Explanation**: This subscription listens for new messages being added. Whenever a new message is added, the server pushes the messageAdded event to the client, including the message's id, content, and author details.
