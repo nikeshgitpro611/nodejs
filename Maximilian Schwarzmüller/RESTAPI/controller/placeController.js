@@ -204,4 +204,42 @@ const createPlace = (req, res, next) => {
     data: creatNewData,
   });
 };
-module.exports = { getByUserId, getById, getAllData, createPlace };
+
+const updatePlaceById = (req, res, next) => {
+  const { name, age, address } = req.body;
+  const urlParamsId = req.params.id;
+  const findById = { ...dummyData.find((Idata) => Idata.id === urlParamsId) };
+  findById.name = name;
+  findById.age = age;
+  findById.address = address;
+
+  const findIndexById = dummyData.findIndex(
+    (fData) => fData.id === urlParamsId
+  );
+
+  if (findIndexById == -1) {
+    return res.json({
+      status: false,
+      message: "Data not found",
+    });
+  }
+
+  dummyData[findIndexById] = findById;
+
+  return res.status(200).json({
+    status: true,
+    message: "Data updated successfully",
+    data: findById,
+  });
+};
+
+const deletePlaceById = (req, res, next) => {};
+
+module.exports = {
+  getByUserId,
+  getById,
+  getAllData,
+  createPlace,
+  updatePlaceById,
+  deletePlaceById,
+};
