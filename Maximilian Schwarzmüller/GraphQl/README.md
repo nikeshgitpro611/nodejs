@@ -1,3 +1,11 @@
+# nPM
+- npm i --save graphql express-graphql.
+- npm i graphql express lodash express-graphql
+
+**graphql**: Used for creating and defining your GraphQL schema, types, queries, and resolvers. It provides the core functionality needed to build a GraphQL API.
+
+**express-graphql**: A middleware for integrating GraphQL with an Express server. It helps in parsing incoming requests, executing GraphQL queries, and returning the appropriate response.
+
 # GraphQL and REST
 
 - both approaches for building APIs
@@ -5,6 +13,11 @@
 **REST** is straightforward, easy to cache, and suitable for simple applications.
 
 **GraphQL** offers flexibility, reduces data transfer overhead, and is ideal for complex, real-time applications where the client needs precise control over the data.
+
+Note : 
+1. Use post for getting Data.
+2. Fetching, prepares and return Data
+3. Only Single End Point(Typicaly/Graphql).
 
 > **When to use GraphQL:**
 
@@ -59,6 +72,8 @@ Single Endpoint: Unlike REST, GraphQL uses a single endpoint, and the client def
 
 - resolver contaon server side logic.
 
+*Three type of controller*
+
 **Query**: For retrieving data.
 
 **Mutation**: For modifying data.
@@ -108,3 +123,8 @@ subscription {
 }
 ```
 **Explanation**: This subscription listens for new messages being added. Whenever a new message is added, the server pushes the messageAdded event to the client, including the message's id, content, and author details.
+
+# Creat Schema
+
+**GraphQLInputObjectType** is essential for defining structured input data for mutations and queries. It allows you to enforce the shape and types of the input that clients must provide, making it easier to validate and process data on the server side. This ensures that operations like creating or updating a blog post are handled with the correct data structure.
+
