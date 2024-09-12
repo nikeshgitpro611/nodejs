@@ -268,5 +268,6 @@ const resolverFunction = {
 ```
 **Which to Choose?**
 
-Use express-graphql if you are building a minimal, custom GraphQL server and prefer flexibility or if you are already using Express heavily in your app and want a lightweight GraphQL solution.
-Use Apollo Server if you want a more feature-rich server with caching, subscriptions, performance monitoring, and other advanced features out of the box.
+Use **express-graphql** if you are building a minimal, custom GraphQL server and prefer flexibility or if you are already using Express heavily in your app and want a lightweight GraphQL solution.
+
+Use **Apollo Server** if you want a more feature-rich server with caching, subscriptions, performance monitoring, and other advanced features out of the box.
