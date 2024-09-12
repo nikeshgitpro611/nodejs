@@ -8,4 +8,4 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true
 }));
 
-app.listen(4001, () => console.log('Server Connected on port 3001'));
+app.listen(4001, () => console.log('Server Connected on port 4001'));

@@ -128,3 +128,119 @@ subscription {
 
 **GraphQLInputObjectType** is essential for defining structured input data for mutations and queries. It allows you to enforce the shape and types of the input that clients must provide, making it easier to validate and process data on the server side. This ensures that operations like creating or updating a blog post are handled with the correct data structure.
 
+> **fragments**
+
+**GraphQL fragments** are a powerful feature that allows you to reuse pieces of query logic in multiple queries, mutations, or subscriptions. By defining a fragment.
+
+```
+step -01 
+fragment UserFields on User {
+  id
+  name
+  email
+}
+
+step -02
+query GetUserAndFriends {
+  user(id: "1") {
+    ...UserFields
+    friends {
+      ...UserFields
+    }
+  }
+}
+```
+
+```
+{
+    apple : company(id: "1") {
+      ...idDuplication
+    }
+  Google: company(id: "2") {
+      ...idDuplication
+    }
+}
+fragment idDuplication on Company {
+    id,
+    name,
+    description
+}
+```
+
+:::::::::::::::::Mutation::::::::::::
+
+**Mutation** : it can be update,creat,delete records.
+
+> **graphql-express and Apollo Server **
+
+Both **graphql-express** and **Apollo Server** are libraries used to build GraphQL APIs in Node.js, but they have different approaches and feature sets. Here’s a comparison of the two.
+
+1. **graphql-express (express-graphql)**
+express-graphql is a middleware for Express, used to serve a GraphQL API.
+
+```
+const express = require('express');
+const { graphqlHTTP } = require('express-graphql');
+const { buildSchema } = require('graphql');
+
+const schema = buildSchema(`
+  type Query {
+    hello: String
+  }
+`);
+
+const root = {
+  hello: () => {
+    return 'Hello world!';
+  },
+};
+
+const app = express();
+app.use('/graphql', graphqlHTTP({
+  schema: schema,
+  rootValue: root,
+  graphiql: true,  // Enable GraphiQL UI
+}));
+
+app.listen(4000, () => console.log('Server is running on http://localhost:4000/graphql'));
+```
+
+2. **Apollo Server**
+
+Apollo Server is a fully-featured GraphQL server library, designed to work out of the box with more batteries included.
+
+It’s part of the Apollo ecosystem, which offers various features like caching, performance monitoring, and schema federation.
+
+Can be used with or without Express. If you are using Express, you can apply it as middleware, but it also works standalone or with other HTTP frameworks like Koa or Fastify.
+
+```
+const { ApolloServer, gql } = require('apollo-server-express');
+const express = require('express');
+
+// Define your schema
+const typeDefs = gql`
+  type Query {
+    hello: String
+  }
+`;
+
+// Define your resolvers
+const resolvers = {
+  Query: {
+    hello: () => 'Hello world!',
+  },
+};
+
+// Create an Apollo Server instance
+const server = new ApolloServer({ typeDefs, resolvers });
+
+const app = express();
+server.applyMiddleware({ app });  // Add Apollo middleware to Express
+
+app.listen({ port: 4000 }, () =>
+  console.log(`Server ready at http://localhost:4000${server.graphqlPath}`)
+);
+```
+**Which to Choose?**
+Use express-graphql if you are building a minimal, custom GraphQL server and prefer flexibility or if you are already using Express heavily in your app and want a lightweight GraphQL solution.
+Use Apollo Server if you want a more feature-rich server with caching, subscriptions, performance monitoring, and other advanced features out of the box.
