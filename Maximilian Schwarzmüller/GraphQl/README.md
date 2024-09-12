@@ -171,7 +171,7 @@ fragment idDuplication on Company {
 
 **Mutation** : it can be update,creat,delete records.
 
-> **graphql-express and Apollo Server **
+> graphql-express and Apollo Server
 
 Both **graphql-express** and **Apollo Server** are libraries used to build GraphQL APIs in Node.js, but they have different approaches and feature sets. Here’s a comparison of the two.
 
@@ -205,7 +205,7 @@ app.use('/graphql', graphqlHTTP({
 app.listen(4000, () => console.log('Server is running on http://localhost:4000/graphql'));
 ```
 
-2. **Apollo Server**
+2. Apollo Server
 
 Apollo Server is a fully-featured GraphQL server library, designed to work out of the box with more batteries included.
 
@@ -241,6 +241,32 @@ app.listen({ port: 4000 }, () =>
   console.log(`Server ready at http://localhost:4000${server.graphqlPath}`)
 );
 ```
+
+```
+Type Files
+type user {
+  id: String!
+  firstName : String
+  age: Int
+  company: Company
+}
+
+type Company{
+  id: String!
+  name: String
+  employees : [User]
+}
+
+RESOLVER FILE
+const resolverFunction = {
+  Query : {
+    users(){
+      return users;
+    }
+  }
+}
+```
 **Which to Choose?**
+
 Use express-graphql if you are building a minimal, custom GraphQL server and prefer flexibility or if you are already using Express heavily in your app and want a lightweight GraphQL solution.
 Use Apollo Server if you want a more feature-rich server with caching, subscriptions, performance monitoring, and other advanced features out of the box.
