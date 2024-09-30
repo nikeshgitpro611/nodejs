@@ -1,3 +1,9 @@
+# REPO
+- https://github.com/StephenGrider/
+- https://github.com/StephenGrider/Lyrical-GraphQL
+
+
+
 # nPM
 - npm i --save graphql express-graphql.
 - npm i graphql express lodash express-graphql
