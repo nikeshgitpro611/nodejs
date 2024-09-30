@@ -81,4 +81,10 @@ const taskSchema = new mongoose.Schema({
 module.exports = mongoose.model("Task", taskSchema);
 ```
 
+# Q - What diffrance between put vs Patch
 
+**Both use for Updating resource**
+
+**Put -** Replaces an existing resource with a new one. When a PUT request is sent, the server replaces the existing resource with the new one. This means that all fields of the resource are sent in the request body, even if they are not modified
+
+**Patch -** Modifies a resource by applying partial updates. When a PATCH request is sent, only the fields that need to be changed are sent in the request body. This helps with network utilization by sending less data to the server and consuming less bandwidth.
