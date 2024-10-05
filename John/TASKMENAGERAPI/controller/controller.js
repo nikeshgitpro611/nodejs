@@ -1,28 +1,23 @@
 const task = require("../modal/task");
 const Task = require("../modal/task");
+const { asyncWrapper } = require("../utils");
 
-const creatTask = async (req, res) => {
-  try {
-    const task = await Task.create(req.body);
-    res.status(200).json({
-      message: "Successfully creatTask",
-      data: task,
-    });
-  } catch (error) {
-    res.status(500).json({ err: error.message });
-  }
-};
-const getAllTask = async (req, res) => {
-  try {
-    const task = await Task.find({});
-    res.status(200).json({
-      message: "Successfully getAllTask",
-      data: task,
-    });
-  } catch (error) {
-    res.status(500).json({ err: error.message });
-  }
-};
+const creatTask = asyncWrapper(async (req, res, next) => {
+  const task = await Task.create(req.body);
+  res.status(200).json({
+    message: "Successfully creatTask",
+    data: task,
+  });
+});
+
+const getAllTask = asyncWrapper(async (req, res) => {
+  const task = await Task.find({});
+  res.status(200).json({
+    message: "Successfully getAllTask",
+    data: task,
+  });
+});
+
 const getTaskById = async (req, res) => {
   // Getting Task By Parms Id
   try {

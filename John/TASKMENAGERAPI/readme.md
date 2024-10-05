@@ -56,8 +56,21 @@ const task = await Task.create(req.body);
  > const task = await Task.findOne({ _id: id });
 - Delet Task(Delet)
 > const task = await Task.findOneAndDelete({ _id: id });
+- Filter Query
+> const data = await productSchemaDefine.find({ name: "marcos" });
+> ...(name && { name: { $regex: name, $options: "i" } }), //Search with filter...!!!
+- Sorting Query
+```
+let data = productSchemaDefine.find(queryObject);
+  if (sort) {
+    const sortList = sort.split(",").join(" ");
+    // console.log(sort.split(',').join(' '));
+    data = data.sort(sortList);
+  }
+  const products = await data.lean(); 
 
-
+  >: If you're working with MongoDB, use .lean() to return plain JavaScript objects instead of Mongoose documents. This removes any circular references and allows you to safely manipulate and send the data in JSON format.
+```
 
 # Task Schema
 ```
