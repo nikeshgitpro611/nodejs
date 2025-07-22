@@ -1,40 +1,31 @@
-const express = require("express");
-const {
-  errorHandlerMiddleware,
-  notFound,
-} = require("./middleware/error-handler");
-const connectDbWithMongoose = require("./db/connectDb");
+import express from "express";
+import { errorHandlerMiddleware } from "./middleware/errorHandlerMiddleware.js";
+import connectDb from "./db/connected.js";
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 const app = express();
-const cors = require("cors");
-const allRoutesPath = require("./routes/allRoutes");
-const Product = require('./modals/productSchemaDefine')
-require("dotenv").config();
-require("express-async-errors");
+// const port = 5000;
 
-//CORs
-const corsConfig = {
-  origin: "http://localhost:5173",
-  optionsSuccessStatus: 200,
-};
-
-// Middleware
 app.use(express.json());
-app.use(cors(corsConfig));
+connectDb(process.env.MONGO_URI);
+
+app.get("/", (req, res) => {
+  res.send('<h1>Home Page</h1> <a href = "/api/products">Products</a>');
+});
+
+app.get("/api/products", (req, res) => {
+  res.send('<h1>Product Page</h1> <a href = "/">Home</a>');
+});
+
 app.use(errorHandlerMiddleware);
 
-app.use("/api/v1/products", allRoutesPath);
-app.use(notFound);
+// 404 Not Found handler (should be the last route)
+app.use((req, res) => {
+  res.status(404).send("<h1>Page Not Found</h1>");
+});
 
-
-const port = process.env.Port || 6000;
-
-const start = async () => {
-  try {
-    await connectDbWithMongoose(process.env.MONGO_URL);
-    app.listen(port, () => console.log(`Server connected on port ${port}`));
-  } catch (error) {
-    console.error("Something went wrong...", error);
-  }
-};
-
-start();
+app.listen(process.env.PORT, () =>
+  console.log(`Server connected http://localhost:/${process.env.PORT}`)
+);
