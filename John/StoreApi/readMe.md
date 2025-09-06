@@ -39,3 +39,7 @@ const productSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('Product', productSchema)
 ```
+> process.exit(0);
+- // ✅ Exit with success
+>  process.exit(1);
+- // ❌ Exit with failure
