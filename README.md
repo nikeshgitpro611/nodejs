@@ -256,3 +256,71 @@ mongodb+srv://<username>:<password>@mern-project.d94v79r.mongodb.net/?retryWrite
 > # MONGOOSE
 - doc for crud operation - https://mongoosejs.com/docs/queries.html
 - 
+
+
+
+:::::::::::::::::::Start::::::::
+
+> 🧩 Basic Node.js Questions
+
+| #  | Question                                                       | Key Point / Hint                                                     |
+| -- | -------------------------------------------------------------- | -------------------------------------------------------------------- |
+| 1  | What is Node.js?                                               | Runtime built on Chrome’s V8 engine; executes JS on server.          |
+| 2  | Is Node single-threaded?                                       | Yes — uses event loop + worker pool for async tasks.                 |
+| 3  | What is the difference between Node.js and JavaScript?         | JS = language; Node = runtime for server-side JS.                    |
+| 4  | What is `npm`?                                                 | Node Package Manager — handles dependencies.                         |
+| 5  | What is `package.json` used for?                               | Metadata, scripts, dependency list.                                  |
+| 6  | What are callbacks in Node.js?                                 | Functions executed after an async operation completes.               |
+| 7  | What is the Event Loop?                                        | Core mechanism that handles async operations in a single thread.     |
+| 8  | What is the difference between blocking and non-blocking code? | Blocking halts the event loop; non-blocking uses callbacks/promises. |
+| 9  | What is the purpose of `require()`?                            | Imports modules. (CommonJS format)                                   |
+| 10 | How do you handle errors in Node.js?                           | `try...catch`, `.catch()` in Promises, `error` events.               |
+
+> ⚙️ Intermediate-Level Questions
+
+| #  | Question                                                                  | Key Point / Hint                                                            |
+| -- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| 11 | Explain Streams in Node.js                                                | Handle large data in chunks — types: Readable, Writable, Duplex, Transform. |
+| 12 | What is Buffer in Node.js?                                                | Used to handle binary data (e.g., file I/O, network streams).               |
+| 13 | What is Middleware in Node.js/Express?                                    | Functions that modify request/response objects.                             |
+| 14 | What is the difference between `process.nextTick()` and `setImmediate()`? | `nextTick()` runs before next event loop phase; `setImmediate()` after.     |
+| 15 | What is the use of `cluster` module?                                      | Enables multi-core utilization (forks multiple processes).                  |
+| 16 | How does Node handle child processes?                                     | Using `child_process` module (`spawn`, `exec`, `fork`).                     |
+| 17 | What is the difference between `fs.readFile` and `fs.createReadStream`?   | `readFile` reads whole file → memory; `createReadStream` streams chunks.    |
+| 18 | What are environment variables?                                           | Configuration values stored outside source code (via `process.env`).        |
+| 19 | What is CORS and how do you enable it?                                    | Cross-Origin Resource Sharing; use middleware like `cors()` in Express.     |
+| 20 | What is the difference between `exports` and `module.exports`?            | `exports` is a shorthand; both reference same object initially.             |
+
+>  🧠 Advanced / Real-World Questions
+
+| #  | Question                                                   | Key Point / Hint                                                 |
+| -- | ---------------------------------------------------------- | ---------------------------------------------------------------- |
+| 21 | How does Node handle concurrency with a single thread?     | Event loop + async I/O + worker threads for heavy tasks.         |
+| 22 | Explain the phases of the Event Loop.                      | Timers → Pending callbacks → Poll → Check → Close callbacks.     |
+| 23 | What are Worker Threads in Node.js?                        | Allow multi-threading for CPU-intensive tasks.                   |
+| 24 | What is the difference between `process` and `os` modules? | `process` = runtime info; `os` = system-level info.              |
+| 25 | How do you secure a Node.js application?                   | Helmet, rate limiting, sanitization, HTTPS, JWT validation.      |
+| 26 | How to manage sessions and authentication in Node?         | Cookies, JWT, or `express-session`.                              |
+| 27 | Explain the difference between `async/await` and Promises. | `await` simplifies Promise chaining (syntactic sugar).           |
+| 28 | What is event-driven architecture?                         | System where events trigger async handlers (core of Node).       |
+| 29 | How to optimize performance in Node.js?                    | Use clustering, caching, load balancing, async I/O, compression. |
+| 30 | How to handle unhandled promise rejections?                | Use `.catch()`, `process.on('unhandledRejection')`.              |
+
+
+> 🚀 Real-World / Project-Level Questions
+
+| #  | Question                                                               | Hint / Example                                                                      |
+| -- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 31 | How do you connect Node.js with databases (e.g., MongoDB, PostgreSQL)? | `mongoose`, `pg`, or ORM like `Sequelize` / `Knex`.                                 |
+| 32 | How do you structure a scalable Node project?                          | Modular routes, services, controllers, config, middlewares.                         |
+| 33 | How do you handle large file uploads?                                  | Use `multer`, `busboy`, or stream directly.                                         |
+| 34 | What is rate limiting and why is it important?                         | Prevents API abuse; use `express-rate-limit`.                                       |
+| 35 | What is load balancing in Node.js?                                     | Distribute requests across multiple instances (via `cluster`, Nginx, or AWS).       |
+| 36 | What is JWT and how do you use it in Node.js?                          | JSON Web Token for stateless authentication.                                        |
+| 37 | How do you debug Node.js applications?                                 | `console.log`, Chrome DevTools, or `node --inspect`.                                |
+| 38 | How do you handle async errors globally in Express?                    | Custom error middleware or wrapper functions.                                       |
+| 39 | What are the benefits of using Knex.js or Prisma ORM?                  | Query builder, migration support, DB-agnostic.                                      |
+| 40 | What are the latest features in Node.js (v18+)?                        | Built-in `fetch`, native test runner, ES Modules support, global `AbortController`. |
+ 
+::::::::::::::::END:::::::::::::::::::::::::::::::::::::::
+
